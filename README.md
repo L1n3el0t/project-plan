@@ -1,7 +1,7 @@
 # Week 10- Modeling
-   Feature- Create Customer and Reservation Entities
-   Goal- To assign customers to specific tables
-   Checklist Criteria- Customer table created, Reservation table created, relationship works
+1. Feature- Create Customer and Reservation Entities
+2. Goal- To assign customers to specific tables
+3. Checklist Criteria- Customer table created, Reservation table created, relationship works
 
 
    
