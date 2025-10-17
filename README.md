@@ -10,6 +10,6 @@ The reserved table would include the Customer info based on the Customer entity,
 1. Feature- Add ICustomerService to display welcome message and message for customer name and reservation time and IReservationService to confirm reservation creation, cancellation, and if number of guests are valid
 2. Goal- Separating services from the controller through decoupling
 3. Checklist Criteria- Services registered through DI, constructor implemented, and messages displayed correctly
-4. Write-up- Evidence the feature is complete will be when the ervice classes have successfully been deciupled from the controllers. The functond in the service classes are completed if they properly display the correct messages in the controllers and that they are all valid throygh unit testing
-5. Test plan- Call methods in a unit test to verify functionality and uused by controllers correctly
+4. Write-up- Evidence the feature is complete will be when the service classes have successfully been decoupled from the controllers. The functons in the service classes are completed if they properly display the correct messages and have made the correct changes from controller actions and that they have all been valid for testing. For now, my plan is to use these services to create methods that will implement CRUD operations while also logging messages in my controller actions. For example, creating a method that adds a customer and displays a log that confirms a customer has been added along with editing and deleting. 
+5. Test plan- Call methods to verify functionality and used by controllers correctly
 # Week 12 – CRUD
