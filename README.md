@@ -22,5 +22,5 @@ The reserved table would include the Customer info based on the Customer entity,
 1. Feature- Adding health endpooint
 2. Goal- Creating a health check to determine whether or not the database is reachable
 3. Checklist Criteria- Healthy when database is reachable, unhealthy when unreachable
-4. Write-up-
-5. Test plan- 
+4. Write-up- The application is complete when I successfully implement the class DatabaseHealthCheck. The program should return a health status if its able to connect to the database, otherwise return an unhealthy status if unable to reach it and throw an exception if the operation somehow fails. After creating and updating the migration, the health endpoint would always return healthy, but I wanted to figure out how I could get it to return as Unhealthy so I would know that DatabaseHealthCheck actually works. The evidence that health endpoints are successfull is, to start with, that the health endpoint will return as healthy after adding and updating the database. It should also in one way or another return Unhealthy when it somehow could not connect or reach the database.
+5. Test plan- Ensure endpoint returns Healthy, remove the seed calls from Program.cs, type drop-database in Package Manager Console, then add health endpoint again to ensure it returns Unhealthy
