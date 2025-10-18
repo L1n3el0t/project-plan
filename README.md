@@ -25,3 +25,8 @@ The reserved table would include the Customer info based on the Customer entity,
 4. Write-up- The application is complete when I successfully implement the class DatabaseHealthCheck that can return both healthy and unhealthy when adding an endpoint. The program should return a health status if its able to connect to the database, otherwise return an unhealthy status if unable to reach it and throw an exception if the operation somehow fails. After creating and updating the migration, while I know that the health endpoint would always return healthy, I wanted to figure out how I could get it to return as Unhealthy so I would know that DatabaseHealthCheck actually works to also return Unhealthy when the database is disconnected. The evidence that health endpoints are successfull is, to start with, that the health endpoint will return as healthy after adding and updating the database. It should also in one way or another return Unhealthy when it somehow could not connect or reach the database. The plan I had for the use of health for diagnoses will be to better ensure that the database is healthy and that migrations have been met without having to check the actual database. Even though sql errors may appear when navigating toward the database, It should pretty much default to the home page where the user should call the endpoint.
 5. Test plan- Ensure endpoint returns Healthy after running migrations, remove the seed calls from Program.cs, type drop-database in Package Manager Console, then add health endpoint again to ensure it returns Unhealthy
 # Week 14 – Logging
+1. Feature- 
+2. Goal- 
+3. Checklist Criteria- 
+4. Write-up-
+5. Test plan-
