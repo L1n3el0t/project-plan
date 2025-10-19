@@ -38,7 +38,7 @@ The reserved table would include the Customer info based on the Customer entity,
 5. Test plan- Run app, go to details; edit and delete customer and reservations
 # Week 16 - Deployment
 1. Feature- Delpoying app to Azure App Service
-2. Goal- 
-3. Checklist Criteria-
-4. Write-up-
-5. Test plan- 
+2. Goal- Making the application accessible with azure
+3. Checklist Criteria- Azure App Service created, health endpoint works, runs on Azure
+4. Write-up- Im having problems with setting up azure, but I hope to be able to deploy my application successfully
+5. Test plan- Visit website, confirm endpoint and navigation
