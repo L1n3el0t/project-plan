@@ -37,5 +37,8 @@ The reserved table would include the Customer info based on the Customer entity,
 4. Write-up- My application on stored procedures are completed when I successfully call these procedures from the methods that gets an id from customers and resevations through my service classes. My plan is to create a migration that specifically uses a stored procedure that will select all of its data from the customer database, therefore maintaining its intended functionality while being able to make data modifications easier. I would then use CustomerService and change the logic in GetCustomerById method to call the migration that uses stored procedure. While I have pretty much implemented its logic, I also plan to create another migration for the reservations database and add a stored procedure while maintaining its data. I plan to create a method in ReservationService that will get a reservation from an id and use hat method to call the migration that handles the sp logic for the reservation database. Along with what I've mentioned, once I update the database and navigate SQL ServerObject explorer and go to Databases < RestaurantManagerContext < Programmability < Stored Procedures and see the file spGetCustomerById and test the database schema, it confirms that a stored procedure has been used and the applicaion itself is using a stored procedure in its database.
 5. Test plan- Run app, go to details; edit and delete customer and reservations
 # Week 16 - Deployment
-1. Feature- Delpoying to Azure App Service
-2. 
+1. Feature- Delpoying app to Azure App Service
+2. Goal- 
+3. Checklist Criteria-
+4. Write-up-
+5. Test plan- 
