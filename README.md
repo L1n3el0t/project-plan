@@ -1,4 +1,4 @@
-My project RestaurantManager was created to manage reservations for customers by containing both a customer and a reservation database. The purpose of this app is for users to create a new customer and add their information for staff to contact them when needed. They then book a reservation to assign the customer by choosing a customer id. The user then has to submit the date when the customer will reserve the seat, how many guests will arrive, and any special requests if they have any. 
+The project RestaurantManager was created to manage reservations for customers by containing both a customer and a reservation database. The purpose of this app is for users to create a new customer and add their information for staff to contact them when needed. They then book a reservation to assign the customer by choosing a customer id. The user then has to submit the date when the customer will reserve the seat, how many guests will arrive, and any special requests if they have any. 
 
 # Week 10- Modeling
 ## Feature
