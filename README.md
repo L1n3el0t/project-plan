@@ -38,7 +38,7 @@ The reserved table would include the Customer info based on the Customer entity,
 5. Test plan- Run app, go to details; edit and delete customer and reservations
 # Week 16 - Deployment
 1. Feature- Delpoying app to Azure App Service
-2. Goal- Making the application accessible with azure
-3. Checklist Criteria- Azure App Service created, health endpoint works, runs on Azure
-4. Write-up- Im having problems with setting up azure, but I hope to be able to deploy my application successfully
+2. Goal- Making the application accessible with a unique URL
+3. Checklist Criteria- Azure App Service created, RestaurantManager runs on Azure, health endpoint works 
+4. Write-up- Im having problems with setting up azure, but I hope to be able to deploy my application. While I'm still in the process of getting familiar with Azure, I plan to build a web app with Azure Web Apps and might name its resource group RGRestaurant since my application is a restaurant management system. Deployment to azure app service is complete when I'm able to create the web app with a supported region because every time I try selecting a region and initializing deployment, it would throw an error saying that its region is not supported. If deployment progress ever suceeds, I should be able to navigate to the apps website to make sure the application is up and running. Once I know the application is running, I plan to go to my RestaurantManager app and right click the main directory in solution explorer to publish to Azure App service for windows after logging in. The site should successfully load and maintain all its functions. It should also take the user to the RestaurantManager website when clicking the url after clicking the webside from Azure Portals home page. If everything still works as before after deployment, then the deployment process would be confirmed as completed.
 5. Test plan- Visit website, confirm endpoint and navigation
