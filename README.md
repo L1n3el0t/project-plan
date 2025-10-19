@@ -16,7 +16,7 @@ Check if database exist, if not run migration
 ## Feature
 Add ICustomerService and IReservationService to separate operations from controller and _NotificationsPartial to display user notifications
 ## Goal
-Separating services from the controller through decoupling while maintaining its logic while adding confirmation messages
+Separating services from the controller through decoupling while maintaining its logic and adding confirmation messages
 ## Checklist Criteria
 Services have maintained operations, constructor implemented, and messages implemented
 ## Write-up
