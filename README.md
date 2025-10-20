@@ -1,80 +1,38 @@
 The project RestaurantManager was created to manage reservations for customers by containing both a customer and a reservation database. The purpose of this app is for users to create a new customer and add their information for staff to contact them when needed. They then book a reservation to assign the customer by choosing a customer id. The user then has to submit the date when the customer will reserve the seat, how many guests will arrive, and any special requests if they have any. 
 
-# Week 10- Modeling
-## Feature
-Create Customer and Reservation Entities
-## Goal
-To assign customers to specific tables
-## Checklist Criteria
-Customer table created, Reservation table created, relationship works
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 10 | Modeling | Create Customer and Reservation Entities | To assign customers to their tables | Customer table created, reservation table created, relationship works | Check if database exist, if not run migration |
+## Week 10 Write-up
 Models are completed once the Customer is able to reserve a table. The customer will include his name, email, and phone number and then book his reservation to the specified table. This information is useful in case employees need to contact them for any reason.
 The reserved table would include the Customer info based on the Customer entity, the time the customer will arrive, the number of guests that will reserve the table, and any special requests if neccessary. This can improve effeciancy for employees since they would know exactly when the customers will arrive and how many seats will be needed. I am planning to use this information to add and update the datebase, then it should display a list of customers and reservations in separate views based on the data that's been seeded. The application will seed the database, dislaying the list of customers who reserved a table along with their info based on their properties. I also hope to create a database for a list of reservations, also providing the neccessary information based on the implemented reservation properties. Overall, the information should provide ease and efficiancy for both customers and workers for a good time at any restaurant.
-## Test plan
-Check if database exist, if not run migration
-# Week 11– Separation of Concerns / Dependency Injection
-## Feature
-Add ICustomerService and IReservationService to separate operations from controller and _NotificationsPartial to display user notifications
-## Goal
-Separating services from the controller through decoupling while maintaining its logic and adding confirmation messages
-## Checklist Criteria
-Services have maintained operations, constructor implemented, and messages implemented
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 11 | Separation of Concerns / Dependency Injection | Add ICustomerService and IReservationService to separate operations from controller and _NotificationsPartial to display user notifications | Separating services from the controller through decoupling while maintaining its logic and adding confirmation messages | Services have maintained operations, constructor implemented, and messages implemented | Call methods to verify functionality and used by controllers correctly |
+## Week 11 Write-up
 Evidence the feature is complete will be when the service classes have successfully been decoupled from the controllers. The functons in the service classes are completed if they properly display the correct logs while making the correct changes from controller actions. My plan is to use these services to create methods that will implement operations while also logging messages in my controller actions. For example, creating a method that adds a customer and displays a log that confirms a customer has been added. This will separate components between action and implementation by injecing the methods of logic from the service class into the controller and will decrease dependancies from each other through loose coupling. I will also create notification messages to confirm the user that changes have been made successfully. I will probably use the service classes to implement these messsages as well but I'm not sure, but for now, I've so far was able to successfully display a message after each student creation. I found a way to use notifications through a javascript library called toastr which uses jQuery to display these messages. I also used the toastr logic in a partial view so I'll just have to add TempData into each action.
-## Test plan
-Call methods to verify functionality and used by controllers correctly
-# Week 12 – CRUD
-## Feature
-Add forms to create, edit, and delete customers and reservations; confirmation messages are shown
-## Goal
-Users can add, update, or delete customer/reservation
-## Checklist Criteria
-Forms are shown in application, message confirmations are shown after form changes
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 12 | CRUD | Add forms to create, edit, and delete customers and reservations; confirmation messages are shown | Users can add, update, or delete customer/reservation | Forms are shown in application, message confirmations are shown after form changes | Add, edit, and delete a customer and reservation; ensure messages are not displayed before changes; ensure feedback is shown after a change |
+## Week 12 Write-up
 I've actualy pretty much implemented CRUD operations while working for Week 11s separation of concerns. While I have yet to finish everything, I plan to ensure that both the customer and reservation entities in the application will let users create, edit, and delete from the database. I will make sure it will require users to enter all properties included in from the entity models. The only property I will not require users to input when creating a new reservation is for the special requests property. I believe this is reasonable to leave for users to decide because it doesn't make sense for me to require a customer to make a special request if they don't have anything special in mind. I will also make sure the reservation date will always be in the future from time of submission and might create other annotations as well. Just as I said before, I will use the toastr library and jQuery when every time a form was used, will show a message confirmation that each form was submitted successfully. So far, I've only added a confirmation message for creating a customer, but I plan to create more message confirmations later on. I think implementing these CRUD operations along with confirmation messages will improve experience and feedback. Users will be given conformation every time they create, edit, or delete an entity, ensuring ease of management.
-## Test plan
-Add, edit, and delete a customer and reservation; ensure messages are not displayed before changes; ensure feedback is shown after a change
-# Week 13 – Diagnostics
-## Feature
-Adding health endpooint
-## Goal
-Creating a health check to determine whether or not the database is reachable
-## Checklist Criteria
-Healthy when database is reachable, unhealthy when unreachable
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 13 | Diagnostics | Adding health endpooint | Creating a health check to determine whether or not the database is reachable | Healthy when database is reachable, unhealthy when unreachable | Ensure endpoint returns Healthy after running migrations, change connection string in appsettings.json, then add health endpoint again to ensure it returns Unhealthy |
+## Week 13 Write-up
 The application is complete when I successfully implement the class DatabaseHealthCheck that can return both healthy and unhealthy when adding an endpoint. The program should return a health status if its able to connect to the database, otherwise return an unhealthy status if unable to reach it and throw an exception if the operation somehow fails. After creating and updating the migration, while I know that the health endpoint would always return healthy, I wanted to figure out how I could get it to return as Unhealthy so I would know that DatabaseHealthCheck actually works to also return Unhealthy when the database is disconnected. The evidence that health endpoints are successfull is, to start with, that the health endpoint will return as healthy after adding and updating the database. It should also in one way or another return Unhealthy when it somehow could not connect or reach the database. The plan I had for the use of health for diagnoses will be to better ensure that the database is healthy and that migrations have been met without having to check the actual database. Even though sql errors may appear when navigating toward the database, It should pretty much default to the home page where the user should call the endpoint.
-## Test plan
-Ensure endpoint returns Healthy after running migrations, change connection string in appsettings.json, then add health endpoint again to ensure it returns Unhealthy
-# Week 14 – Logging
-## Feature
-Log every time a customer/reservation is created, updated, or deleted; log every endpoint call and seeding
-## Goal
-Having a record of customer and reservation behavior; record every time health endpoint is called; seeding records
-## Checklist Criteria
-Logs contain name and date of behavior
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 14 | Logging | Log every time a customer/reservation is created, updated, or deleted; log every endpoint call and seeding | Having a record of customer and reservation behavior; record every time health endpoint is called; seeding records | Logs contain name and date of behavior | Create, edit, and delete customer and reservation, confirm log output; append health endpoint, confirm log output |
+## Week 14 Write-up
 The logging is complete when the application logs messages after every CRUD operation. I plan for logs to contain the id, the name of the log, and the date to when each action was performed. I also plan to log messages after every call to the health endpoint. The logic should be able to display a record from the command prompt of every operation and endpoint call and the date when they were performed while the application is running. Along with a message to confirm the health status is returned healthy, it should also display a log error whenever returned Unhealthy. I have already included a log for each customer creation by separating its logic from the controllers to services and also included a logs from checking the health status of the database, but I plan to add more log information later and maybe some warnings along with it. I think this approach is reasonable because logging these CRUD operations seems to be of the most important information for this application. If for some reason invalid information or unusual behavior were noted, looking through records would be a good starting point for auditing and diagnosing problems. These messages would increase the likelhoood of maintaining security by auditing any changes were unauthorized
-## Test plan
-Create, edit, and delete customer and reservation, confirm log output; append health endpoint, confirm log output
-# Week 15 – Stored Procedures
-## Feature
-Call customers and reservations by id
-## Goal
-Maintiaining database behavior while using stored procedure
-## Checklist Criteria
-Stored procedure implemented, databases maintain functionality
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 15 | Stored Procedures | Call customers and reservations by id | Maintiaining database behavior while using stored procedure | Stored procedure implemented, databases maintain functionality | Run app, go to details; edit and delete customer and reservations |
+## Week 15 Write-up
 My application on stored procedures are completed when I successfully call these procedures from the methods that gets an id from customers and resevations through my service classes. My plan is to create a migration that specifically uses a stored procedure that will select all of its data from the customer database, therefore maintaining its intended functionality while being able to make data modifications easier. I would then use CustomerService and change the logic in GetCustomerById method to call the migration that uses stored procedure. While I have pretty much implemented its logic, I also plan to create another migration for the reservations database and add a stored procedure while maintaining its data. I plan to create a method in ReservationService that will get a reservation from an id and use hat method to call the migration that handles the sp logic for the reservation database. Along with what I've mentioned, once I update the database and navigate SQL ServerObject explorer and go to Databases < RestaurantManagerContext < Programmability < Stored Procedures and see the file spGetCustomerById and test the database schema, it confirms that a stored procedure has been used and the applicaion itself is using a stored procedure in its database.
-## Test plan
-Run app, go to details; edit and delete customer and reservations
-# Week 16 - Deployment
-## Feature
-Delpoying app to Azure App Service
-## Goal
-Making the application accessible with a unique URL
-## Checklist Criteria
-Azure App Service created, RestaurantManager runs on Azure, health endpoint works 
-## Write-up
+| Week | Concept | Feature | Goal | Acceptance Criteria | Test plan |
+| --- | --- | --- | --- | --- | --- |
+| 16 | Deployment | Delpoying app to Azure App Service | Making the application accessible with a unique URL | Azure App Service created, RestaurantManager runs on Azure, health endpoint works  | Visit website, confirm endpoint and navigation |
+## Week 16 Write-up
 Im having problems with setting up azure, but I hope to be able to deploy my application. While I'm still in the process of getting familiar with Azure, I plan to build a web app with Azure Web Apps and might name its resource group RGRestaurant since my application is a restaurant management system. Deployment to azure app service is complete when I'm able to create the web app with a supported region because every time I try selecting a region and initializing deployment, it would throw an error saying that its region is not supported. If deployment progress ever suceeds, I should be able to navigate to the apps website to make sure the application is up and running. Once I know the application is running, I plan to go to my RestaurantManager app and right click the main directory in solution explorer to publish to Azure App service for windows after logging in. The site should successfully load and maintain all its functions. It should also take the user to the RestaurantManager website when clicking the url after clicking the webside from Azure Portals home page. If everything still works as before after deployment, then the deployment process would be confirmed as completed.
-## Test plan
-Visit website, confirm endpoint and navigation
